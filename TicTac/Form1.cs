@@ -19,6 +19,8 @@ namespace TicTac
         public bool isTurnEnd = false;
         public bool isGameStarted = false;
 
+
+       
         public MainLayout()
         {
             InitializeComponent();
@@ -56,6 +58,9 @@ namespace TicTac
             //проверяем победу
             CheckWin(senderBu.Text);
 
+            //проверяем ничью
+            CheckDraw();
+
         }
 
        
@@ -66,22 +71,42 @@ namespace TicTac
         {
             if (
                 //проверка горизонталей на одиаковый текст
-                (button1.Text == button2.Text && button2.Text == button3.Text)
-                || (button4.Text == button5.Text && button5.Text == button6.Text)
-                  || (button7.Text == button8.Text && button8.Text == button9.Text)
+                (button1.Text == button2.Text && button2.Text == button3.Text && button1.Enabled == false)
+                || (button4.Text == button5.Text && button5.Text == button6.Text && button4.Enabled == false)
+                  || (button7.Text == button8.Text && button8.Text == button9.Text && button7.Enabled == false)
 
                 //вертикали
-                || (button1.Text == button4.Text && button4.Text == button7.Text)
-                  || (button2.Text == button5.Text && button5.Text == button8.Text)
-                    || (button3.Text == button6.Text && button6.Text == button9.Text)
+                || (button1.Text == button4.Text && button4.Text == button7.Text && button1.Enabled == false)
+                  || (button2.Text == button5.Text && button5.Text == button8.Text && button2.Enabled == false)
+                    || (button3.Text == button6.Text && button6.Text == button9.Text && button3.Enabled == false)
 
                 //диагонали    
-                || (button1.Text == button5.Text && button5.Text == button9.Text)
-                  || (button3.Text == button5.Text && button5.Text == button7.Text)
+                || (button1.Text == button5.Text && button5.Text == button9.Text && button1.Enabled == false)
+                  || (button3.Text == button5.Text && button5.Text == button7.Text && button3.Enabled == false)
                )
             {
                 MessageBox.Show("Уррря! Победили " + whoLastTurn);
-                //Application.Restart();
+                Application.Restart();
+            }
+        }
+
+
+        void CheckDraw()
+        {
+            if(
+                button1.Enabled == false
+                    && button2.Enabled == false
+                    && button3.Enabled == false
+                    && button4.Enabled == false
+                    && button5.Enabled == false
+                    && button6.Enabled == false
+                    && button7.Enabled == false
+                    && button8.Enabled == false
+                    && button9.Enabled == false
+                )
+            {
+                MessageBox.Show("O_x НИЧЬЯ! x_O");
+                Application.Restart();
             }
         }
 
