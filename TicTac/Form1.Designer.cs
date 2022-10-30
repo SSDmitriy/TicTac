@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.OwillNext = new System.Windows.Forms.ToolStripTextBox();
-            this.XwillNext = new System.Windows.Forms.ToolStripTextBox();
-            this.Restart = new System.Windows.Forms.ToolStripTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -42,55 +37,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.OwillNext = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Restart = new System.Windows.Forms.Button();
+            this.XwillNext = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.Restart});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(538, 42);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OwillNext,
-            this.XwillNext});
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 38);
-            this.toolStripMenuItem1.Text = "Чей ход ";
-            // 
-            // OwillNext
-            // 
-            this.OwillNext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OwillNext.Name = "OwillNext";
-            this.OwillNext.Size = new System.Drawing.Size(200, 38);
-            this.OwillNext.Text = "нОООлики";
-            // 
-            // XwillNext
-            // 
-            this.XwillNext.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.XwillNext.Name = "XwillNext";
-            this.XwillNext.Size = new System.Drawing.Size(200, 38);
-            this.XwillNext.Text = "fiXXXiki";
-            // 
-            // Restart
-            // 
-            this.Restart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Restart.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(128, 38);
-            this.Restart.Text = "Сызнова";
-            this.Restart.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -100,7 +51,6 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(168, 168);
             this.button1.TabIndex = 1;
-            this.button1.Text = ".";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
@@ -112,8 +62,8 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 168);
             this.button2.TabIndex = 2;
-            this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button_Click);
             // 
             // button3
             // 
@@ -123,8 +73,8 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 168);
             this.button3.TabIndex = 3;
-            this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button_Click);
             // 
             // button4
             // 
@@ -134,8 +84,8 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(168, 168);
             this.button4.TabIndex = 4;
-            this.button4.Text = "X";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button_Click);
             // 
             // button5
             // 
@@ -145,8 +95,8 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(168, 168);
             this.button5.TabIndex = 5;
-            this.button5.Text = "X";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button_Click);
             // 
             // button6
             // 
@@ -156,8 +106,8 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(168, 168);
             this.button6.TabIndex = 6;
-            this.button6.Text = "X";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button_Click);
             // 
             // button7
             // 
@@ -167,8 +117,8 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(168, 168);
             this.button7.TabIndex = 7;
-            this.button7.Text = "X";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button_Click);
             // 
             // button8
             // 
@@ -178,8 +128,8 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(168, 168);
             this.button8.TabIndex = 8;
-            this.button8.Text = "X";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button_Click);
             // 
             // button9
             // 
@@ -189,14 +139,68 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(168, 168);
             this.button9.TabIndex = 9;
-            this.button9.Text = "X";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // OwillNext
+            // 
+            this.OwillNext.Checked = true;
+            this.OwillNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OwillNext.Location = new System.Drawing.Point(131, 17);
+            this.OwillNext.Name = "OwillNext";
+            this.OwillNext.Size = new System.Drawing.Size(117, 24);
+            this.OwillNext.TabIndex = 10;
+            this.OwillNext.TabStop = true;
+            this.OwillNext.Text = "нОлики";
+            this.OwillNext.UseVisualStyleBackColor = true;
+            this.OwillNext.CheckedChanged += new System.EventHandler(this.OwillNext_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(5, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 27);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Первые:";
+            // 
+            // Restart
+            // 
+            this.Restart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Restart.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Restart.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Restart.Location = new System.Drawing.Point(360, 10);
+            this.Restart.Name = "Restart";
+            this.Restart.Size = new System.Drawing.Size(168, 38);
+            this.Restart.TabIndex = 12;
+            this.Restart.Text = "Сызнова";
+            this.Restart.UseVisualStyleBackColor = false;
+            this.Restart.Click += new System.EventHandler(this.Restart_Click);
+            // 
+            // XwillNext
+            // 
+            this.XwillNext.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.XwillNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.XwillNext.Location = new System.Drawing.Point(265, 18);
+            this.XwillNext.Name = "XwillNext";
+            this.XwillNext.Size = new System.Drawing.Size(83, 24);
+            this.XwillNext.TabIndex = 13;
+            this.XwillNext.TabStop = true;
+            this.XwillNext.Text = "fiXiki";
+            this.XwillNext.UseVisualStyleBackColor = true;
+            this.XwillNext.CheckedChanged += new System.EventHandler(this.XwillNext_CheckedChanged);
             // 
             // MainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 580);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(538, 581);
+            this.Controls.Add(this.XwillNext);
+            this.Controls.Add(this.Restart);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.OwillNext);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -206,24 +210,15 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainLayout";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Крестики-нолики";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripTextBox OwillNext;
-        private System.Windows.Forms.ToolStripTextBox XwillNext;
-        private System.Windows.Forms.ToolStripTextBox Restart;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -233,6 +228,10 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.RadioButton OwillNext;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Restart;
+        private System.Windows.Forms.RadioButton XwillNext;
     }
 }
 

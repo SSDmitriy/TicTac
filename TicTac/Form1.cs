@@ -14,21 +14,29 @@ namespace TicTac
     {
 
         //чей ход
-        bool xTurn = true;
+        bool xTurn;
+
+        public bool isTurnEnd = false;
+        public bool isGameStarted = false;
+
         public MainLayout()
         {
             InitializeComponent();
         }
 
-      
+        
 
         private void Button_Click(object sender, EventArgs e)
         {
+            isGameStarted = true;
+
+            OwillNext.Enabled = false;
+            XwillNext.Enabled = false;
+
             Button senderBu = (Button)sender;
 
             if (xTurn)
             {
-
                 senderBu.Text = "X";
             }
             else
@@ -42,9 +50,64 @@ namespace TicTac
             //дизейблим нажатую кнопку
             senderBu.Enabled = false;
 
-            //проверяем победу
-            //CheckWin(senderBu.Text);
 
+            isTurnEnd = true;
+
+            //проверяем победу
+            CheckWin(senderBu.Text);
+
+        }
+
+       
+
+
+        //есть ли на поле выйгрышная ситуация
+        void CheckWin(string whoLastTurn)
+        {
+            if (
+                //проверка горизонталей на одиаковый текст
+                (button1.Text == button2.Text && button2.Text == button3.Text)
+                || (button4.Text == button5.Text && button5.Text == button6.Text)
+                  || (button7.Text == button8.Text && button8.Text == button9.Text)
+
+                //вертикали
+                || (button1.Text == button4.Text && button4.Text == button7.Text)
+                  || (button2.Text == button5.Text && button5.Text == button8.Text)
+                    || (button3.Text == button6.Text && button6.Text == button9.Text)
+
+                //диагонали    
+                || (button1.Text == button5.Text && button5.Text == button9.Text)
+                  || (button3.Text == button5.Text && button5.Text == button7.Text)
+               )
+            {
+                MessageBox.Show("Уррря! Победили " + whoLastTurn);
+                //Application.Restart();
+            }
+        }
+
+        private void OwillNext_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!isGameStarted)
+            {
+                xTurn = false;
+            }
+            
+        }
+
+        private void XwillNext_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!isGameStarted)
+            {
+                xTurn = true;
+            }
+        }
+
+        private void Restart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
+
+
+
