@@ -20,18 +20,19 @@ namespace TicTac
         public bool isGameStarted = false;
 
 
-       
+
         public MainLayout()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void Button_Click(object sender, EventArgs e)
         {
             isGameStarted = true;
 
+            //отключить радиобаттоны выбора первого хода
             OwillNext.Enabled = false;
             XwillNext.Enabled = false;
 
@@ -46,12 +47,15 @@ namespace TicTac
                 senderBu.Text = "O";
             }
 
-            //переход хода
-            xTurn = !xTurn;
+            //перекрасить кнопку
+            paintButton(senderBu);
+
 
             //дизейблим нажатую кнопку
             senderBu.Enabled = false;
 
+            //переход хода
+            xTurn = !xTurn;
 
             isTurnEnd = true;
 
@@ -63,7 +67,7 @@ namespace TicTac
 
         }
 
-       
+
 
 
         //есть ли на поле выйгрышная ситуация
@@ -85,15 +89,16 @@ namespace TicTac
                   || (button3.Text == button5.Text && button5.Text == button7.Text && button3.Enabled == false)
                )
             {
-                MessageBox.Show("Уррря! Победили " + whoLastTurn);
+               //MessageBox.Show("УРРРЯЯ! Выйграли " + whoLastTurn);
+                MessageBox.Show($"   УРРРЯЯ!\n Выйграли {whoLastTurn}", "Победа!", MessageBoxButtons.OK);
                 Application.Restart();
             }
         }
 
-
+        //Если все кнопки уже прокликаны, то ничья
         void CheckDraw()
         {
-            if(
+            if (
                 button1.Enabled == false
                     && button2.Enabled == false
                     && button3.Enabled == false
@@ -110,15 +115,17 @@ namespace TicTac
             }
         }
 
+        //начинают нолики (если тыцкнули радиобаттон)
         private void OwillNext_CheckedChanged(object sender, EventArgs e)
         {
             if (!isGameStarted)
             {
                 xTurn = false;
             }
-            
+
         }
 
+        //или крестики
         private void XwillNext_CheckedChanged(object sender, EventArgs e)
         {
             if (!isGameStarted)
@@ -130,6 +137,18 @@ namespace TicTac
         private void Restart_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        void paintButton(Button button)
+        {
+            if (xTurn)
+            {
+                button.BackColor = Color.Magenta;
+            }
+            else
+            {
+                button.BackColor = Color.Yellow;
+            }
         }
     }
 }
